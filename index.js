@@ -1,5 +1,5 @@
-const express = require('express')
-
+//const express = require('express')
+import express from 'express' //ESM ecmascript modules 
 const app = express()
 
 //routing
@@ -7,12 +7,10 @@ const app = express()
 app.get('/', (req, res)=> {
     res.send('hola mundo con express')
 })
-app.get('/ecomerce', (req, res)=> {
-    res.send('esta otra ruta es el ecomerce')
-})
+
+const port = process.env.PORT || 4000
 
 
-
-app.listen(4000, () =>{
-    console.log('servidor funcionando')
+app.listen(port, () =>{
+    console.log('servidor funcionando en el puerto ', port)
 })
